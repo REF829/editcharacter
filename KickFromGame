@@ -1,1 +1,43 @@
-game.Players.LocalPlayer:Kick("You Were Kicked From The Game")
+local Players = game:GetService("Players")
+local player = Players.LocalPlayer
+local playerGui = player:WaitForChild("PlayerGui")
+
+local targetName = "TargetPlayerNameHere" --:// change this to the player you desire to kick.
+
+local messageGui = Instance.new("ScreenGui")
+messageGui.Name = "KickMessageGui"
+messageGui.ResetOnSpawn = false
+messageGui.Parent = playerGui
+
+local textLabel = Instance.new("TextLabel")
+textLabel.Size = UDim2.new(0.5, 0, 0, 50)
+textLabel.Position = UDim2.new(0.25, 0, 0, 20) -- Top center-ish
+textLabel.BackgroundColor3 = Color3.fromRGB(35, 35, 35)
+textLabel.BackgroundTransparency = 0.3
+textLabel.TextColor3 = Color3.new(1, 1, 1)
+textLabel.Font = Enum.Font.SourceSansBold
+textLabel.TextScaled = true
+textLabel.Parent = messageGui
+textLabel.Visible = false
+
+local function showMessage(msg)
+    textLabel.Text = msg
+    textLabel.Visible = true
+    wait(10)
+    textLabel.Visible = false
+end
+
+local target = Players:FindFirstChild(targetName)
+
+if target then
+    local success, err = pcall(function()
+        target:Kick("You got kicked by a cool script!")
+    end)
+    if success then
+        showMessage(targetName .. " was kicked successfully!")
+    else
+        showMessage("Failed to kick " .. targetName .. ": " .. tostring(err))
+    end
+else
+    showMessage("Player '" .. targetName .. "' not found!")
+end
