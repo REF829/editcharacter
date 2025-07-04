@@ -31,7 +31,7 @@ local target = Players:FindFirstChild(targetName)
 
 if target then
     local success, err = pcall(function()
-        target:Kick("You got kicked by a cool script!")
+        target:Kick("You Have Been Kicked From The Expierence")
     end)
     if success then
         showMessage(targetName .. " was kicked successfully!")
