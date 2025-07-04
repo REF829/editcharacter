@@ -2,7 +2,7 @@ local Players = game:GetService("Players")
 local player = Players.LocalPlayer
 local playerGui = player:WaitForChild("PlayerGui")
 
-local targetName = "TargetPlayerNameHere" --:// change this to the player you desire to kick.
+local targetName = "dsaifadshfuasfh" --:// change this to the player you desire to kick.
 
 local messageGui = Instance.new("ScreenGui")
 messageGui.Name = "KickMessageGui"
@@ -11,7 +11,7 @@ messageGui.Parent = playerGui
 
 local textLabel = Instance.new("TextLabel")
 textLabel.Size = UDim2.new(0.5, 0, 0, 50)
-textLabel.Position = UDim2.new(0.25, 0, 0, 20) -- Top center-ish
+textLabel.Position = UDim2.new(0.25, 0, 0, 20)
 textLabel.BackgroundColor3 = Color3.fromRGB(35, 35, 35)
 textLabel.BackgroundTransparency = 0.3
 textLabel.TextColor3 = Color3.new(1, 1, 1)
