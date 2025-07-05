@@ -1,3 +1,4 @@
+--:// SERVERSIDE TESTING (DO NOT USE)
 --:// do not loadstring this or else you cannot change the player you desire, search through the script instead as it will work normal
 local Players = game:GetService("Players")
 local player = Players.LocalPlayer
